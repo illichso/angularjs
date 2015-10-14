@@ -1,6 +1,14 @@
 (function(){
     var app = angular.module('store', []);
 
+    app.controller("ReviewController", function() {
+        this.review = {};
+        this.addReview = function(product) {
+            product.reviews.push(this.review);
+            this.review = {};
+        };
+    });
+
     app.controller('StoreController', function(){
         this.products = gems;
     });
@@ -23,6 +31,18 @@
                 "images/gem-05.gif",
                 "images/gem-09.gif"
             ],
+            reviews: [
+                {
+                    stars: 5,
+                    body: "I love this product!",
+                    author: "joe@thomas.com"
+
+                },
+                {
+                    stars: 1,
+                    body: "This product sucks",
+                    author: "boeb@thomas.net"
+                }]
         },
         {
             name: 'Pentagonal Gem',
@@ -35,7 +55,19 @@
                     full: 'resources/full.jpg',
                     thumb:'resources/thumb.jpg'
                 }
-            ]
+            ],
+            reviews: [
+                {
+                    stars: 5,
+                    body: "I love this product",
+                    author: "joe@thomas.com"
+
+                },
+                {
+                    stars: 1,
+                    body: "This product sucks!",
+                    author: "boeb@thomas.net"
+                }]
 
         }];
 
