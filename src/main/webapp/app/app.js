@@ -82,4 +82,29 @@
             return this.tab === checkTab;
         };
     });
+
+    app.directive('productTitle', function () {
+        return{
+            restrict: 'E',
+            templateUrl: 'product-title.html'
+        };
+    });
+
+    app.directive('promTitle', function () {
+        return{
+            restrict: 'A',
+            templateUrl: ''
+        };
+    });
+    app.directive('productPanels', function () {
+        return{
+            restrict: 'E',
+            templateUrl: 'product-panels.html',
+            controller:function(){
+
+            },
+            controllerAs: 'panels'
+        };
+    });
+
 })();
